@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>添加我的微信</title>
+    <!-- 移动端适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 3秒后自动跳转 -->
+    <meta http-equiv="refresh" content="3;url=weixin://dl/add?your_wechat_id">
+    <style>
+        body { text-align: center; padding: 20px; font-family: Arial; }
+        .qr-code { width: 200px; margin: 20px auto; }
+        .button { 
+            background: #07c160; 
+            color: white; 
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>正在跳转到微信...</h2>
+    <p>如果未自动跳转，请：</p >
+    
+    <!-- 方案1：手动点击跳转按钮 -->
+    
+
+    <!-- 方案2：显示二维码 -->
+    <div class="qr-code">
+        < img src="wechat-qr.png" alt="微信二维码" width="200">
+        <p>或扫描二维码添加</p >
+    </div>
+
+    <!-- 方案3：文字提示 -->
+    <div style="margin-top: 30px;">
+        <p>备用方法：</p >
+        <p>1. 打开微信 → 右上角"+" → 添加朋友</p >
+        <p>2. 搜索微信号：<strong>your_wechat_id</strong></p >
+    </div>
+
+    <!-- 跳转失败检测 -->
+    <script>
+        setTimeout(function(){
+            document.querySelector('h2').innerHTML = "跳转失败，请使用下方方式添加";
+        }, 3000); // 3秒后提示
+    </script>
+</body>
+</html>
